@@ -1,5 +1,7 @@
 # City Explorer
 
+**Site**: [hosted on netlify](https://rhea-city-explorer.netlify.app)
+
 **Author**: Rhea Mimi Carillo
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
