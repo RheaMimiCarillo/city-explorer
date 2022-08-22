@@ -13,12 +13,18 @@ class Map extends React.Component
         onHide={this.props.onHide}
       >
         <Modal.Header closeButton>
-          <Modal.Title>{this.props.alt}</Modal.Title>
+          <Modal.Title
+            className="w-100"
+          >{this.props.alt}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <img
             src={this.props.mapURL}
-            alt={this.props.cityDisplayName}>
+            alt={this.props.cityDisplayName}
+
+            // make image fit into the Modal window
+            className="img-fluid"
+          >
           </img>
           <ListGroup>Coordinates:
             <ListGroup.Item>Latitude: {this.props.lat}</ListGroup.Item>
