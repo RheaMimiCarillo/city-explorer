@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import ListGroup from 'react-bootstrap/ListGroup';
+import Map from './Map';
 
 class Main extends React.Component
 {
@@ -18,6 +19,7 @@ class Main extends React.Component
       longitude: '',
       cityDisplayName: '',
       mapURL: '',
+      showMap: false,
       error: false,
       errorMessage: ''
     };
@@ -48,6 +50,7 @@ class Main extends React.Component
         longitude: response.data[0].lon,
         cityDisplayName: response.data[0].display_name,
         mapURL: this.handleMapURL(response.data[0]),
+        showMap: true,
         error: false
       });
       console.log(`${this.state.cityName}'s lat and long: `, response.data[0].lat, this.state.longitude);
@@ -64,6 +67,16 @@ class Main extends React.Component
     }
     // request city data from the API
 
+  }
+
+  // this event listener toggles the state to show or hide the Map modal
+  handleMapModal = () =>
+  {
+    this.setState(
+    {
+      // set showMap as the opposite of its current value is state
+      showMap: !this.state.showMap,
+    });
   }
 
   handleMapURL = data =>
@@ -106,10 +119,20 @@ class Main extends React.Component
           ?
           <p>{this.state.errorMessage}</p>
           :
-          <ListGroup>{this.state.cityDisplayName}
-            <ListGroup.Item>Latitude: {this.state.latitude}</ListGroup.Item>
-            <ListGroup.Item>Longitude: {this.state.longitude}</ListGroup.Item>
-          </ListGroup>
+          // <ListGroup>{this.state.cityDisplayName}
+          //   <ListGroup.Item>Latitude: {this.state.latitude}</ListGroup.Item>
+          //   <ListGroup.Item>Longitude: {this.state.longitude}</ListGroup.Item>
+          // </ListGroup>
+          <Map
+          show={this.state.showMap}
+
+          onHide={this.handleMapModal}
+
+          mapURL={this.state.mapURL}
+          alt={this.state.cityDisplayName}
+          lat={this.state.latitude}
+          lon={this.state.longitude}
+        />
         }
 
       </>
