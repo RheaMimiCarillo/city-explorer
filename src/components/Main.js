@@ -16,6 +16,7 @@ class Main extends React.Component
       bigCityData:[],
       latitude: '',
       longitude: '',
+      cityDisplayName: '',
       error: false,
       errorMessage: ''
     };
@@ -44,6 +45,7 @@ class Main extends React.Component
         bigCityData: response.data,
         latitude: response.data[0].lat,
         longitude: response.data[0].lon,
+        cityDisplayName: response.data[0].display_name,
         error: false
       });
       console.log(`${this.state.cityName}'s lat and long: `, this.state.latitude, this.state.longitude);
@@ -90,7 +92,7 @@ class Main extends React.Component
           ?
           <p>{this.state.errorMessage}</p>
           :
-          <ListGroup>
+          <ListGroup>{this.state.cityDisplayName}
             <ListGroup.Item>Latitude: {this.state.latitude}</ListGroup.Item>
             <ListGroup.Item>Longitude: {this.state.longitude}</ListGroup.Item>
           </ListGroup>
