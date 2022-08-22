@@ -17,6 +17,7 @@ class Main extends React.Component
       latitude: '',
       longitude: '',
       cityDisplayName: '',
+      mapURL: '',
       error: false,
       errorMessage: ''
     };
@@ -46,9 +47,10 @@ class Main extends React.Component
         latitude: response.data[0].lat,
         longitude: response.data[0].lon,
         cityDisplayName: response.data[0].display_name,
+        mapURL: this.handleMapURL(response.data[0]),
         error: false
       });
-      console.log(`${this.state.cityName}'s lat and long: `, this.state.latitude, this.state.longitude);
+      console.log(`${this.state.cityName}'s lat and long: `, response.data[0].lat, this.state.longitude);
     }
     catch(error)
     {
@@ -62,6 +64,17 @@ class Main extends React.Component
     }
     // request city data from the API
 
+  }
+
+  handleMapURL = data =>
+  {
+    console.log('in handle map url');
+    console.log('map url expected output');
+    let url = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${data.lat},${data.lon}&zoom=12`;
+
+    console.log('map url expected output: ', url);
+
+    return url;
   }
 
   handleInputCity = e =>
