@@ -6,21 +6,24 @@
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+
+A website where users can input the name of a city and get location information about the city including coordinates and a map.
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+
+Install React, React-bootstrap, axios, and have an API key from LocationIQ
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+
+React, React-bootstrap, axios, LocationIQ
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+01 2:05 - created whiteboard on Miro, detailing the flow of data from the client to the API
 
 ## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+
+[Class 06 whiteboard](https://miro.com/app/board/uXjVPdOaZ3E=/?share_link_id=990901439909) worked with Adrian Colme-Halverson
 
 ## Time Estimates
 
