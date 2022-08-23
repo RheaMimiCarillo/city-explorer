@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 // import ListGroup from 'react-bootstrap/ListGroup';
 import Map from './Map';
+import '../styles/Main.css';
 
 class Main extends React.Component
 {
