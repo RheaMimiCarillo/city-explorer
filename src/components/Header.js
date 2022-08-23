@@ -1,4 +1,8 @@
 import React from 'react';
+// import Nav from 'react/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+
 
 class Header extends React.Component
 {
@@ -6,9 +10,12 @@ class Header extends React.Component
   {
     return(
       <>
-        <header>
-          <h1>City Explorer</h1>
-        </header>
+        <Navbar bg="dark" variant="dark">
+          <Container>
+            <Navbar.Brand href="#home">City Explorer</Navbar.Brand>
+            {/* <Nav></Nav> */}
+          </Container>
+        </Navbar>
       </>
     )
   }

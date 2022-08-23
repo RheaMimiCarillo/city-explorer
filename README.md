@@ -24,6 +24,7 @@ React, React-bootstrap, axios, LocationIQ
 ## Credit and Collaborations
 
 [Class 06 whiteboard](https://miro.com/app/board/uXjVPdOaZ3E=/?share_link_id=990901439909) worked with Adrian Colme-Halverson
+![WRRC])(./src/images/lab_06_wrrc.png "Lab 06 WRRC")
 
 ## Time Estimates
 

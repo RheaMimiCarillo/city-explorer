@@ -2,14 +2,8 @@
   box-sizing: border-box;
 }
 
-
-/* make footer stick to top */
 footer{
   width: 100%;
   position: fixed;
   bottom: 0;
-}
-
-h1{
-  font-size: 1.5rem;
-}
+  }
