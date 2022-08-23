@@ -107,7 +107,7 @@ class Main extends React.Component
             <Form.Control
               type="text"
               name="cityName"
-              defaultValue={'Townsville'}
+              defaultValue={'Lazytown'}
               onInput={this.handleInputCity}
             />
           </Form.Label>
