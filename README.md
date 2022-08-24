@@ -79,3 +79,8 @@ My 'Ah-hah!' was realizing I could write whatever I wanted into the error messag
 
 **How long you spent working on this assignment**
 I spent about 5 hours working on lab 06.
+
+
+Lab 08 WRRC
+![Lab 08 WRRC](.src/images/lab-08 WRRC.png "Lab 08 WRRC")
+I worked with Jeffery Smith on the lab 08 WRRC
