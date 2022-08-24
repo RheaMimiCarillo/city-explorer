@@ -20,6 +20,9 @@ class Map extends React.Component
           >{this.props.cityData.display_name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          {/* https://react-bootstrap.github.io/components/figures/
+          use figure to make images */}
+          {/* or use https://react-bootstrap.github.io/components/images/ to display images */}
           <img
             src={this.props.mapURL}
             alt={this.props.cityData.display_name}

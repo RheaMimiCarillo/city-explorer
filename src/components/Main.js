@@ -48,6 +48,8 @@ class Main extends React.Component
       // log of the response
       console.log(response.data[0]);
 
+      // NOTE put this bit in a separate helper method, so we don't have two `await`s in a single try/catch
+
       // make a url to use to make an API request to for weather data
       // should look like: http://localhost:3001/weather?lat=<a latitude>&lon=<a longitude>&searchQuery=<a city name>
       let url = `${process.env.REACT_APP_SERVER}/weather?lat=${response.data[0].lat}&lon=${response.data[0].lon}&searchQuery=${this.state.cityName}`;
@@ -57,6 +59,7 @@ class Main extends React.Component
       let weatherData = await axios.get(url);
 
       // update state with city data
+      // NOTE, whenever we set something to state, we re-render (it runs the whole `render()` method, again)
       this.setState(
       {
         cityData: response.data[0],
