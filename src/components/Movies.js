@@ -1,6 +1,9 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 import Movie from './Movie';
 import '../styles/Movies.css';
+
 
 class Movies extends React.Component
 {
@@ -13,8 +16,13 @@ class Movies extends React.Component
     console.log('movie data in Movies:', this.props.movieData);
     return(
       <>
-        {/* render the array of <Movie/> objects */}
+      <Container>
+        <Row xs={1} lg={2}>
+          {/* render the array of <Movie/> objects */}
         {this.moviesList}
+        </Row>
+      </Container>
+
       </>
     );
   }
