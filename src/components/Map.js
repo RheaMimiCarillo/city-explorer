@@ -5,6 +5,7 @@ import Weather from './Weather';
 import Movies from './Movies';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import Image from 'react-bootstrap/Image'
 import '../styles/Map.css';
 
 
@@ -17,6 +18,8 @@ class Map extends React.Component
       <Modal
         show={this.props.show}
         onHide={this.props.onHide}
+        size="lg"
+        keyboard="true"
       >
         <Modal.Header closeButton>
           <Modal.Title
@@ -33,20 +36,20 @@ class Map extends React.Component
             className="mb-3"
           >
             <Tab eventKey="map" title="Map">
-              <img
+              <ListGroup horizontal>
+                <ListGroup.Item>Latitude: {this.props.cityData.lat}</ListGroup.Item>
+                <ListGroup.Item>Longitude: {this.props.cityData.lon}</ListGroup.Item>
+              </ListGroup>
+              <Image
                 src={this.props.mapURL}
                 alt={this.props.cityData.display_name}
 
                 // make image fit into the Modal window
                 className="img-fluid"
               >
-              </img>
+              </Image>
 
-              <ListGroup>Coordinates:
-                <ListGroup.Item>Latitude: {this.props.cityData.lat}</ListGroup.Item>
-                <ListGroup.Item>Longitude: {this.props.cityData.lon}</ListGroup.Item>
 
-              </ListGroup>
             </Tab>
 
             <Tab eventKey="forecast" title="Weather">

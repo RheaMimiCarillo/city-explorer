@@ -152,7 +152,7 @@ class Main extends React.Component
             <Form.Control
               type="text"
               name="cityName"
-              defaultValue={'Lazytown'}
+              placeholder={'(Really Cool City)'}
               onInput={this.handleInputCity}
             />
           </Form.Label>
