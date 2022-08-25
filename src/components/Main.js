@@ -16,8 +16,6 @@ class Main extends React.Component
       // empty string to hold user inputted city name
       cityName: '',
       cityData: [],
-      movieData: [],
-      weatherData: [],
       mapURL: '',
       showMap: false,
       error: false,
@@ -56,12 +54,14 @@ class Main extends React.Component
       // make a request for data from our server, using axios
       let weatherData = await axios.get(url);
 
+      console.log('weatherData from axios: ', weatherData.data);
+
       // use getMovies() to get an array of Movies
       let moviesUrl = `${process.env.REACT_APP_SERVER}/movies?city=${this.state.cityName}`;
       console.log('moviesUrl: ',moviesUrl);
 
       let movieData = await axios.get(moviesUrl);
-      console.log('moveieData from my server: ', movieData);
+      console.log('moveieData from my server: ', movieData.data);
       // update state with city data
       // NOTE, whenever we set something to state, we re-render (it runs the whole `render()` method, again)
       this.setState(
@@ -72,11 +72,10 @@ class Main extends React.Component
         showMap: true,
         // axios wraps data into `data` so we target weatherData.data to get the info we requested
         weatherData: weatherData.data,
-        error: false,
         movieData: movieData.data,
+        error: false,
       });
       console.log(` ${this.state.cityName}'s lat and long: `, response.data[0].lat, response.data[0].lon);
-      console.log(movieData.data);
     }
     catch(error)
     {
@@ -145,6 +144,7 @@ class Main extends React.Component
   }
   render()
   {
+    console.log('movie data in Main render: ', this.state.movieData);
     return(
       <>
         <Form onSubmit={this.handleSubmitCity}>

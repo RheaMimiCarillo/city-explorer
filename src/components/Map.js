@@ -10,6 +10,7 @@ class Map extends React.Component
 {
   render()
   {
+    console.log('movieData in Maps props: ', this.props.movieData);
     return(
       <Modal
         show={this.props.show}
