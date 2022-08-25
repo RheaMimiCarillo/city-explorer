@@ -148,7 +148,7 @@ class Main extends React.Component
     return(
       <>
         <Form onSubmit={this.handleSubmitCity}>
-          <Form.Label>Please enter a City Name
+          <Form.Label>Enter a city, see a map, the weather, and top movies:
             <Form.Control
               type="text"
               name="cityName"
