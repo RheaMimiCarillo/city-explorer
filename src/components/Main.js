@@ -15,11 +15,9 @@ class Main extends React.Component
     this.state = {
       // empty string to hold user inputted city name
       cityName: '',
-      cityData: {},
-      bigCityData:[],
-      latitude: 0,
-      longitude: 0,
-      cityDisplayName: '',
+      cityData: [],
+      movieData: [],
+      weatherData: [],
       mapURL: '',
       showMap: false,
       error: false,
@@ -58,24 +56,27 @@ class Main extends React.Component
       // make a request for data from our server, using axios
       let weatherData = await axios.get(url);
 
+      // use getMovies() to get an array of Movies
+      let moviesUrl = `${process.env.REACT_APP_SERVER}/movies?city=${this.state.cityName}`;
+      console.log('moviesUrl: ',moviesUrl);
+
+      let movieData = await axios.get(moviesUrl);
+      console.log('moveieData from my server: ', movieData);
       // update state with city data
       // NOTE, whenever we set something to state, we re-render (it runs the whole `render()` method, again)
       this.setState(
       {
         cityData: response.data[0],
-        bigCityData: response.data,
-        latitude: response.data[0].lat,
-        longitude: response.data[0].lon,
-        cityDisplayName: response.data[0].display_name,
-
         // could probably move this into a helper function in the Map component
         mapURL: this.handleMapURL(response.data[0]),
         showMap: true,
         // axios wraps data into `data` so we target weatherData.data to get the info we requested
         weatherData: weatherData.data,
-        error: false
+        error: false,
+        movieData: movieData.data,
       });
       console.log(` ${this.state.cityName}'s lat and long: `, response.data[0].lat, response.data[0].lon);
+      console.log(movieData.data);
     }
     catch(error)
     {
@@ -91,6 +92,29 @@ class Main extends React.Component
 
   }
 
+  // get movie data from movieDB using axios
+  /*
+  getMovies = async url =>
+  {
+    try
+    {
+      let movieData = await axios.get(url);
+      console.log('url in getMovies: ', url);
+      console.log('movieData in movieData: ', movieData);
+      return movieData;
+    }
+    catch (error)
+    {
+      console.log('error: ', error);
+      console.log('error.message: ', error.message);
+      this.setState(
+      {
+        error: true,
+        errorMessage: `Uh-oh, Spaghetti-Os! Error #: ${error.response.status}`
+      });
+    }
+  }
+  */
   // this event listener toggles the state to show or hide the Map modal
   handleMapModal = () =>
   {
@@ -152,6 +176,8 @@ class Main extends React.Component
               cityData={this.state.cityData}
               // pass weatherData from state into Map props
               weatherData={this.state.weatherData}
+              // pass movie data into props
+              movieData={this.state.movieData}
             />
           </>
         }
