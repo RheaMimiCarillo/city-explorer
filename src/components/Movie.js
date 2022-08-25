@@ -4,26 +4,42 @@ import '../styles/Movie.css';
 
 class Movie extends React.Component
 {
-  // make an array of Cards
-  moviesList = this.props.movieData.map((movie) =>
-  {
-    return <Card key={movie.id}style={{ width: '18rem' }}>
-    <Card.Title>{movie.title} ({movie.language})</Card.Title>
-    <Card.Text>({movie.releaseDate})</Card.Text>
-    {movie.src ? <Card.Img variant="top" src={movie.src} alt={movie.title} className="img-fluid"/> : <></>}
-    <Card.Body>
-      <Card.Text>{movie.overview}</Card.Text>
-      {movie.score ? <Card.Text>Rating: {movie.score}</Card.Text> : ''}
-    </Card.Body>
-  </Card>
-  });
-
   render()
   {
-    console.log('movie data in Movie:' , this.props.movieData);
+    console.log('current movie in <Movie/>: ', this.props.currentMovie)
     return(
       <>
-        {this.moviesList}
+        <Card key={this.props.currentMovie.id} style={{ width: '18rem' }}>
+          <Card.Title>
+            {this.props.currentMovie.title} ({this.props.currentMovie.language})
+          </Card.Title>
+
+          <Card.Text>({this.props.currentMovie.releaseDate})</Card.Text>
+
+          { // render either a movie image, or render an empty fragment
+            this.props.currentMovie.src
+            ?
+            <Card.Img
+              variant="top"
+              src={this.props.currentMovie.src}
+              alt={this.props.currentMovie.title}
+              className="img-fluid"
+            />
+              :
+            <></>
+          }
+
+          <Card.Body>
+            <Card.Text>{this.props.currentMovie.overview}</Card.Text>
+
+            { // render either a movie score, or an empty string
+              this.props.currentMovie.score
+              ?
+              <Card.Text>Rating: {this.props.currentMovie.score}</Card.Text>
+              : ''
+            }
+          </Card.Body>
+        </Card>
       </>
     );
   }
