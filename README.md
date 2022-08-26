@@ -26,6 +26,7 @@ React, React-bootstrap, axios, LocationIQ
 
 [Class 06 whiteboard](https://miro.com/app/board/uXjVPdOaZ3E=/?share_link_id=990901439909) worked with Adrian Colme-Halverson
 ![WRRC])(./src/images/lab_06_wrrc.png "Lab 06 WRRC")
+![Lab 06 WRRC](./src/images/lab_06_wrrc.png?raw=true "Lab 06 WRRC")
 
 ## Time Estimates
 
@@ -81,6 +82,7 @@ My 'Ah-hah!' was realizing I could write whatever I wanted into the error messag
 I spent about 5 hours working on lab 06.
 
 
-Lab 08 WRRC
-![Lab 08 WRRC](.src/images/lab-08 WRRC.png "Lab 08 WRRC")
+## Lab 08
+
+![Lab 08 WRRC](.src/images/lab_08_WRRC.png?raw=true "Lab 08 WRRC")
 I worked with Jeffery Smith on the lab 08 WRRC
