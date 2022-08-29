@@ -6,12 +6,13 @@ class WeatherDay extends React.Component
 {
   render()
   {
+    // console.log('currentWeather in props in WeatherDay', this.props.currentWeather);
     return(
       <>
         <ListGroup.Item
           key={this.props.idx}
         >
-          Weather on {this.props.currentWeather.date}: {/*this.props.currentWeather.maxTemp*/} {this.props.currentWeather.description}
+          Weather on {this.props.currentWeather.time}: {/*this.props.currentWeather.maxTemp*/} {this.props.currentWeather.forecast}
         </ListGroup.Item>
       </>
     );

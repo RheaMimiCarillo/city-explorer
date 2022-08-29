@@ -5,21 +5,23 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 class Weather extends React.Component
 {
-  // make an array of ListGroup.Items
-  weatherList = this.props.weatherData.map((currentDay, idx) =>
-    <WeatherDay
-      currentWeather={currentDay}
-      key={idx}
-      cityData={this.props.cityData}
-    />
-  );
+
 
   render()
   {
+    let weatherDayList = this.props.weatherData.map( (currentDay, idx) =>
+    {
+      return <WeatherDay
+        currentWeather={currentDay}
+        key={idx}
+      />;
+    });
+    // console.log('weatherData in props in Weather', this.props.weatherData);
     return(
       <>
         <ListGroup>
-          {this.weatherList}
+          {/* {this.weatherList} */}
+          {weatherDayList}
         </ListGroup>
 
       </>

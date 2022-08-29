@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Weather from './Weather';
-//import Movies from './Movies';
+import Movies from './Movies';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import Image from 'react-bootstrap/Image'
@@ -13,6 +13,7 @@ class Map extends React.Component
 {
   render()
   {
+    // console.log('weatherData in props in Main', this.props.weatherData);
     return(
       <Modal
         show={this.props.show}
@@ -49,23 +50,24 @@ class Map extends React.Component
               >
               </Image>
 
-
             </Tab>
 
+            {
             <Tab eventKey="forecast" title="Weather">
-              {/* Tab for weather forecast */}
-              <Weather
-                cityData={this.props.cityData}
-                weatherData={this.props.weatherData}
+             {/* Tab for weather forecast */}
+             <Weather
+               cityData={this.props.cityData}
+               weatherData={this.props.weatherData}
               />
             </Tab>
+            }
             {
-            //<Tab eventKey="movies" title="Movies">
-            //  {/* Tab for Movies */}
-            //  <Movies
-            //    movieData={this.props.movieData}
-            //  />
-            //</Tab>
+            <Tab eventKey="movies" title="Movies">
+             {/* Tab for Movies */}
+             <Movies
+               movieData={this.props.movieData}
+             />
+            </Tab>
             }
           </Tabs>
 

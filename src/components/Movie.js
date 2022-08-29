@@ -11,7 +11,7 @@ class Movie extends React.Component
       <>
       <Col className='mt-4'>
           <Card
-            key={this.props.currentMovie.id}
+
             className="h-100 p-1"
           >
             <Card.Title>
