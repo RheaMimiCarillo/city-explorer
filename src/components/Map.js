@@ -13,13 +13,14 @@ class Map extends React.Component
 {
   render()
   {
-    console.log('movieData in Maps props: ', this.props.movieData);
+    // console.log('weatherData in props in Main', this.props.weatherData);
     return(
       <Modal
         show={this.props.show}
         onHide={this.props.onHide}
         size="lg"
         keyboard="true"
+        backdrop="static"
       >
         <Modal.Header closeButton>
           <Modal.Title
@@ -49,23 +50,25 @@ class Map extends React.Component
               >
               </Image>
 
-
             </Tab>
 
+            {
             <Tab eventKey="forecast" title="Weather">
-              {/* Tab for weather forecast */}
-              <Weather
-                cityData={this.props.cityData}
-                weatherData={this.props.weatherData}
+             {/* Tab for weather forecast */}
+             <Weather
+               cityData={this.props.cityData}
+               weatherData={this.props.weatherData}
               />
             </Tab>
-
+            }
+            {
             <Tab eventKey="movies" title="Movies">
-              {/* Tab for Movies */}
-              <Movies
-                movieData={this.props.movieData}
-              />
+             {/* Tab for Movies */}
+             <Movies
+               movieData={this.props.movieData}
+             />
             </Tab>
+            }
           </Tabs>
 
         </Modal.Body>
