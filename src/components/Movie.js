@@ -7,7 +7,6 @@ class Movie extends React.Component
 {
   render()
   {
-    console.log('current movie in <Movie/>: ', this.props.currentMovie)
     return(
       <>
       <Col className='mt-4'>

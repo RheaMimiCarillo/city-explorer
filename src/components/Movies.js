@@ -13,13 +13,12 @@ class Movies extends React.Component
   moviesList = this.props.movieData.map(movie => <Movie currentMovie={movie}/>);
   render()
   {
-    console.log('movie data in Movies:', this.props.movieData);
     return(
       <>
       <Container>
-        <Row xs={1} lg={2}>
+        <Row xs={1} md={2} lg={3}>
           {/* render the array of <Movie/> objects */}
-        {this.moviesList}
+          {this.moviesList}
         </Row>
       </Container>
 

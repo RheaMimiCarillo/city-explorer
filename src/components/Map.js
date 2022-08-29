@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Weather from './Weather';
-import Movies from './Movies';
+//import Movies from './Movies';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import Image from 'react-bootstrap/Image'
@@ -13,13 +13,13 @@ class Map extends React.Component
 {
   render()
   {
-    console.log('movieData in Maps props: ', this.props.movieData);
     return(
       <Modal
         show={this.props.show}
         onHide={this.props.onHide}
         size="lg"
         keyboard="true"
+        backdrop="static"
       >
         <Modal.Header closeButton>
           <Modal.Title
@@ -59,13 +59,14 @@ class Map extends React.Component
                 weatherData={this.props.weatherData}
               />
             </Tab>
-
-            <Tab eventKey="movies" title="Movies">
-              {/* Tab for Movies */}
-              <Movies
-                movieData={this.props.movieData}
-              />
-            </Tab>
+            {
+            //<Tab eventKey="movies" title="Movies">
+            //  {/* Tab for Movies */}
+            //  <Movies
+            //    movieData={this.props.movieData}
+            //  />
+            //</Tab>
+            }
           </Tabs>
 
         </Modal.Body>
